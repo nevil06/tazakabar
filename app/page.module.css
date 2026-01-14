@@ -1,0 +1,122 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, var(--amber) 0%, var(--orange) 100%);
+    color: var(--navy);
+}
+
+.notification.error {
+    background: rgba(251, 133, 0, 0.9);
+    color: white;
+    border: 2px solid var(--orange);
+}
+
+.hero {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(142, 202, 230, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+.title {
+    margin-bottom: var(--spacing-md);
+    font-size: clamp(3rem, 8vw, 5rem);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    color: var(--sky-blue);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.subscription {
+    padding: var(--spacing-xl) 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.subscriptionWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsFeed {
+    padding: var(--spacing-xl) 0;
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+    padding: var(--spacing-lg) 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(142, 202, 230, 0.2);
+}
+
+.footerContent {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.footerContent p {
+    margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .subscription,
+    .newsFeed {
+        padding: var(--spacing-lg) 0;
+    }
+}
